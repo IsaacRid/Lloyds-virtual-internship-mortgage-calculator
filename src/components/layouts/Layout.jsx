@@ -5,7 +5,7 @@ export default function Layout(props) {
     return (
         <>
             <header>
-                <h1>Lloyds bank Mortgage Calculator</h1>
+                <h1 className="welcome-page-title"> <i class="fa-solid fa-building-columns"></i> Lloyds bank Mortgage Calculator</h1>
             </header>
             <main>
                 {children}
