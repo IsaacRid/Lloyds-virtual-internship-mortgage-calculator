@@ -1,3 +1,4 @@
+import React from "react";
 
 export default function Welcome(props) {
 
@@ -8,34 +9,6 @@ export default function Welcome(props) {
             <div className="welcome-page-hero">
                 <p>Welcome to the Lloyds Bank Mortgage Calculator. This easy-to-use tool helps you quickly estimate your monthly payments, explore different loan options, and understand what works best for your budget.</p>
             </div>
-
-            <table className="welcome-page-table">
-                <thead>
-                    <tr>
-                        <th>Term</th>
-                        <th>Definition</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>a</td>
-                        <td>a</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-
 
             <div className="welcome-page-input">
                 <p>To get started, enter your name below and click the button to get started!</p>

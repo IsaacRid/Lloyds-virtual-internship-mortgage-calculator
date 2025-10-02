@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Layout from "./components/layouts/Layout";
@@ -6,10 +7,11 @@ import Inputs from "./components/pages/Inputs";
 import Outputs from "./components/pages/Outputs";
 
 function App() {
-  const navigate = useNavigate();   // ✅ works now, because Router is above App
+  const navigate = useNavigate();
   const [name, setName] = useState("");
 
-  const handleWelcomeSubmit = () => {
+  const handleWelcomeSubmit = (e) => {
+    e.preventDefault();
     if (!name) return;
     localStorage.setItem("username", name);
     navigate("/inputs");
