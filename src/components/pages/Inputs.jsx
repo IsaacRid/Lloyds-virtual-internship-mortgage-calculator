@@ -1,38 +1,50 @@
+
 import React, { useState } from "react";
-import Input from "../Input";
+import { mortgageTerms } from "../../utils/mortgageTerms";
 
 export default function Inputs() {
+    const [formData, setFormData] = useState({
+        homePrice: "",
+        downPayment: "",
+        loanTerm: "",
+        interestRate: "",
+    });
+
+    function handleChange(e) {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        localStorage.setItem("formData", JSON.stringify(formData));
+    }
 
     return (
-        <div className="inputs-page">
-            <h2>Mortgage Inputs</h2>
-            <form>
-                <Input
-                    label="Home Price (£)"
-                    type="number"
-                    placeholder="Enter home price"
-                    id="homePrice"
-                />
-                <Input
-                    label="Down Payment (£)"
-                    type="number"
-                    placeholder="Enter down payment amount"
-                    id="downPayment"
-                />
-                <Input
-                    label="Loan Term (years)"
-                    type="number"
-                    placeholder="Enter loan term in years"
-                    id="loanTerm"
-                />
-                <Input
-                    label="Interest Rate (%)"
-                    type="number"
-                    placeholder="Enter interest rate"
-                    id="interestRate"
-                />
-                <button type="submit">Calculate Mortgage</button>
-            </form>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <input
+                name="homePrice"
+                value={formData.homePrice}
+                onChange={handleChange}
+            />
+            <input
+                name="downPayment"
+                value={formData.downPayment}
+                onChange={handleChange}
+            />
+            <input
+                name="loanTerm"
+                value={formData.loanTerm}
+                onChange={handleChange}
+            />
+            <input
+                name="interestRate"
+                value={formData.interestRate}
+                onChange={handleChange}
+            />
+            <button type="submit">Submit</button>
+        </form>
     );
 }
