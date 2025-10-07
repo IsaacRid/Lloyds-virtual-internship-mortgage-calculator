@@ -12,11 +12,8 @@ export default function Welcome(props) {
 
             <div className="welcome-page-input">
                 <p>To get started, enter your name below and click the button to get started!</p>
-                <input value={name} onChange={(event) => {
-                    console.log(event.target.value)
-                    setName(event.target.value)
-                }} type="text" placeholder="Enter your name..." />
-                <button onClick={handleWelcomeSubmit}>Get Started</button>
+                <input className="input-field" value={name} onChange={(event) => setName(event.target.value)} type="text" placeholder="Enter your name..." />
+                <button className="welcome-page-btn" onClick={handleWelcomeSubmit}>Get Started</button>
             </div>
         </>
     );

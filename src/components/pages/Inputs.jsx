@@ -1,50 +1,27 @@
 
 import React, { useState } from "react";
-import { mortgageTerms } from "../../utils/mortgageTerms";
+import Input from "../Input";
 
-export default function Inputs() {
-    const [formData, setFormData] = useState({
-        homePrice: "",
-        downPayment: "",
-        loanTerm: "",
-        interestRate: "",
-    });
-
-    function handleChange(e) {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    }
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        localStorage.setItem("formData", JSON.stringify(formData));
-    }
+export default function Inputs(props) {
+    const { handleInputSubmit, homePrice, setHomePrice, downPayment, setDownPayment, loanTerm, setLoanTerm, interestRate, setInterestRate } = props;
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                name="homePrice"
-                value={formData.homePrice}
-                onChange={handleChange}
-            />
-            <input
-                name="downPayment"
-                value={formData.downPayment}
-                onChange={handleChange}
-            />
-            <input
-                name="loanTerm"
-                value={formData.loanTerm}
-                onChange={handleChange}
-            />
-            <input
-                name="interestRate"
-                value={formData.interestRate}
-                onChange={handleChange}
-            />
-            <button type="submit">Submit</button>
+        <form className="inputs-form" onSubmit={handleInputSubmit}>
+            <div className="input-group">
+                <Input title="Home Price" name="homePrice" value={homePrice} onChange={(event) => setHomePrice(event.target.value)} placeholder="Enter home price..." />
+            </div>
+            <div className="input-group">
+                <Input title="Down Payment" name="downPayment" value={downPayment} onChange={(event) => setDownPayment(event.target.value)} placeholder="Enter down payment..." />
+            </div>
+            <div className="input-group">
+                <Input title="Loan Term" name="loanTerm" value={loanTerm} onChange={(event) => setLoanTerm(event.target.value)} placeholder="Enter loan term..." />
+            </div>
+            <div className="input-group">
+                <Input title="Interest Rate" name="interestRate" value={interestRate} onChange={(event) => setInterestRate(event.target.value)} placeholder="Enter interest rate..." />
+            </div>
+            <button className="inputs-submit-btn" type="submit">
+                <i className="fa-solid fa-arrow-right"></i> Calculate
+            </button>
         </form>
     );
 }
