@@ -1,6 +1,6 @@
 export const mortgageTerms = {
     homePrice: "The total cost of the property you are buying.",
-    downPayment: "The upfront amount you pay toward the home price, usually a percentage.",
+    downPayment: "The upfront amount you pay toward the home price.",
     loanTerm: "The length of time over which the mortgage must be repaid.",
     interestRate: "The percentage charged on the loan amount for borrowing money.",
     loanAmount: "The amount you borrow from the lender after your down payment.",

@@ -8,16 +8,16 @@ export default function Inputs(props) {
     return (
         <form className="inputs-form" onSubmit={handleInputSubmit}>
             <div className="input-group">
-                <Input title="Home Price" name="homePrice" value={homePrice} onChange={(event) => setHomePrice(event.target.value)} placeholder="Enter home price..." />
+                <Input title="Home Price (£)" name="homePrice" value={homePrice} onChange={(event) => setHomePrice(event.target.value)} placeholder="Enter home price..." />
             </div>
             <div className="input-group">
-                <Input title="Down Payment" name="downPayment" value={downPayment} onChange={(event) => setDownPayment(event.target.value)} placeholder="Enter down payment..." />
+                <Input title="Down Payment (£)" name="downPayment" value={downPayment} onChange={(event) => setDownPayment(event.target.value)} placeholder="Enter down payment..." />
             </div>
             <div className="input-group">
-                <Input title="Loan Term" name="loanTerm" value={loanTerm} onChange={(event) => setLoanTerm(event.target.value)} placeholder="Enter loan term..." />
+                <Input title="Loan Term (years)" name="loanTerm" value={loanTerm} onChange={(event) => setLoanTerm(event.target.value)} placeholder="Enter loan term..." />
             </div>
             <div className="input-group">
-                <Input title="Interest Rate" name="interestRate" value={interestRate} onChange={(event) => setInterestRate(event.target.value)} placeholder="Enter interest rate..." />
+                <Input title="Interest Rate (%)" name="interestRate" value={interestRate} onChange={(event) => setInterestRate(event.target.value)} placeholder="Enter interest rate..." />
             </div>
             <button className="inputs-submit-btn" type="submit">
                 <i className="fa-solid fa-arrow-right"></i> Calculate

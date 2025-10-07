@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Layout from "./components/layouts/Layout";
 import Welcome from "./components/pages/Welcome";
@@ -54,6 +54,19 @@ function App() {
   };
 
   const { loanAmount, monthlyPI, totalPaid, totalInterest } = calculateMortgage();
+
+  useEffect(() => {
+    const storedName = localStorage.getItem("username");
+    const formData = localStorage.getItem("formData");
+    if (storedName) {
+      setName(storedName);
+      navigate("/inputs");
+    }
+    if (storedName && formData) {
+      navigate("/outputs");
+    }
+
+  }, []);
 
   return (
     <Layout>
