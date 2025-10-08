@@ -53,6 +53,15 @@ function App() {
     };
   };
 
+  const handleCalculateNewMortgage = () => {
+    setHomePrice("");
+    setDownPayment("");
+    setLoanTerm("");
+    setInterestRate("");
+    localStorage.removeItem("formData");
+    navigate("/inputs");
+  }
+
   const { loanAmount, monthlyPI, totalPaid, totalInterest } = calculateMortgage();
 
   useEffect(() => {
@@ -85,6 +94,7 @@ function App() {
           path="/inputs"
           element={
             <Inputs
+              name={name}
               handleInputSubmit={handleInputSubmit}
               homePrice={homePrice}
               setHomePrice={setHomePrice}
@@ -105,6 +115,7 @@ function App() {
               monthlyPI={monthlyPI}
               totalPaid={totalPaid}
               totalInterest={totalInterest}
+              handleCalculateNewMortgage={handleCalculateNewMortgage}
             />
           }
         />

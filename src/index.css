@@ -1,5 +1,6 @@
 /* Modern submit button for inputs */
-.inputs-submit-btn {
+.inputs-submit-btn,
+.new-mortgage-btn {
     background: #006A4D;
     color: #fff;
     border: none;

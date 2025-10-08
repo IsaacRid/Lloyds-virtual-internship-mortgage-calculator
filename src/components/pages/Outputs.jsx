@@ -2,7 +2,7 @@ import Output from "../Output";
 
 export default function Outputs(props) {
 
-    const { loanAmount, monthlyPI, totalPaid, totalInterest } = props;
+    const { loanAmount, monthlyPI, totalPaid, totalInterest, handleCalculateNewMortgage } = props;
     return (
         <>
             <div className="outputs-page-hero">
@@ -21,6 +21,9 @@ export default function Outputs(props) {
             <div className="output-group">
                 <Output title="Total Interest" name="totalInterest" value={totalInterest} />
             </div>
+            <button className="new-mortgage-btn" onClick={handleCalculateNewMortgage}>
+                Calculate new mortgage <i className="fa-solid fa-arrow-right"></i>
+            </button>
         </>
     );
 }
